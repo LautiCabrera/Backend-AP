@@ -15,15 +15,18 @@ public class PersonaDto {
     private String descripcion;
     @NotBlank
     private String imagen;
+    @NotBlank
+    private String titulo;
 
     public PersonaDto() {
     }
 
-    public PersonaDto(String nombre, String apellido, String descripcion, String imagen) {
+    public PersonaDto(String nombre, String apellido, String descripcion, String imagen, String titulo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.titulo = titulo;
     }
     
 }

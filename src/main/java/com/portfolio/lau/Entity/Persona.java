@@ -31,16 +31,21 @@ public class Persona {
     private String descripcion;
     
     private String imagen;
+    
+    @NotNull
+    @Size(min = 3, max  = 30, message = "No llenó correctamente los campos")
+    private String titulo;
 
     public Persona() {
         
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String imagen) {
+    public Persona(String nombre, String apellido, String descripcion, String imagen, String titulo) {
         this.nombre = nombre;
         this.apellido = apellido;
-        
+        this.descripcion = descripcion;
         this.imagen = imagen;
+        this.titulo = titulo;
     }
     
 }
