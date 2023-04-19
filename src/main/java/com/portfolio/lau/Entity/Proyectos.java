@@ -27,5 +27,19 @@ public class Proyectos {
     @NotNull
     @Size(min = 1, max = 1500, message = "No se cumple la condición")
     private String descripcion; 
+
+    public Proyectos() {
+        
+    }
+
+    public Proyectos(String nombre, String url, String descripcion) {
+        this.nombre = nombre;
+        this.url = url;
+        this.descripcion = descripcion;
+    }
+
+    public Proyectos(String nombre, String descripcion) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

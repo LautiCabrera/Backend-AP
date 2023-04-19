@@ -9,20 +9,19 @@ public class ProyectosDto {
     
     @NotBlank
     private String nombre;
-    
     @NotBlank
     private String url;
-    
     @NotBlank
-    private String desempenio;
+    private String descripcion;
 
     public ProyectosDto() {
+        
     }
 
-    public ProyectosDto(String nombre, String url, String desempenio) {
+    public ProyectosDto(String nombre, String url, String descripcion) {
         this.nombre = nombre;
         this.url = url;
-        this.desempenio = desempenio;
+        this.descripcion = descripcion;
     }
     
 }
