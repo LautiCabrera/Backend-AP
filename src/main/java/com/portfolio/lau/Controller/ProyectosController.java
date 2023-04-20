@@ -47,7 +47,7 @@ public class ProyectosController {
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
         implementProyectosService.delete(id);
-        return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto eliminado"), HttpStatus.OK);
     }
     
     @PostMapping("/crear")
@@ -56,9 +56,9 @@ public class ProyectosController {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         if(implementProyectosService.existsByNombre(proyectosDto.getNombre()))
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        Proyectos proyectos = new Proyectos(proyectosDto.getNombre(), proyectosDto.getDescripcion());
+        Proyectos proyectos = new Proyectos(proyectosDto.getNombre(), proyectosDto.getDescripcion(),proyectosDto.getUrl());
         implementProyectosService.save(proyectos);
-        return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto creado"), HttpStatus.OK);
                 
     }
     
@@ -78,7 +78,7 @@ public class ProyectosController {
         
         implementProyectosService.save(proyectos);
         
-        return new ResponseEntity(new Mensaje("Educación actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto actualizado"), HttpStatus.OK);
     }
     
    

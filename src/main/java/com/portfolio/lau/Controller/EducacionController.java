@@ -47,7 +47,7 @@ public class EducacionController {
             return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
         implementEducacionService.delete(id);
-        return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Educación eliminada"), HttpStatus.OK);
     }
     
     @PostMapping("/crear")
@@ -58,7 +58,7 @@ public class EducacionController {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         Educacion educacion = new Educacion(educacionDto.getNombre(), educacionDto.getDescripcion());
         implementEducacionService.save(educacion);
-        return new ResponseEntity(new Mensaje("Educacion creada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Educación creada"), HttpStatus.OK);
                 
     }
     

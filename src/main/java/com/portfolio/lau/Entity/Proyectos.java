@@ -6,7 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter @Setter
 @Entity
@@ -17,29 +18,21 @@ public class Proyectos {
     private int id;
     
     @NotNull
-    @Size(min = 5, max = 20, message = "No se cumple la condición")
     private String nombre;
     
     @NotNull
-    @Size(min = 1, max = 100, message = "No se cumple la condición")
-    private String url;
-    
-    @NotNull
-    @Size(min = 1, max = 1500, message = "No se cumple la condición")
     private String descripcion; 
+    
+    private String url;
 
     public Proyectos() {
-        
     }
 
-    public Proyectos(String nombre, String url, String descripcion) {
+    public Proyectos(String nombre, String descripcion, String url) {
         this.nombre = nombre;
-        this.url = url;
         this.descripcion = descripcion;
+        this.url = url;
     }
 
-    public Proyectos(String nombre, String descripcion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
     
 }

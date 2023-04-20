@@ -10,18 +10,18 @@ public class ProyectosDto {
     @NotBlank
     private String nombre;
     @NotBlank
-    private String url;
-    @NotBlank
     private String descripcion;
+    @NotBlank
+    private String url;
 
     public ProyectosDto() {
         
     }
 
-    public ProyectosDto(String nombre, String url, String descripcion) {
+    public ProyectosDto(String nombre, String descripcion, String url) {
         this.nombre = nombre;
-        this.url = url;
         this.descripcion = descripcion;
+        this.url = url;
     }
     
 }
