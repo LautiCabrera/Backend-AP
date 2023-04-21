@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,20 +17,25 @@ public class Educacion {
     private int id;
     
     @NotNull
-    @Size(min = 5, max = 20, message = "No se cumple la condición")
     private String nombre;
     
     @NotNull
-    @Size(min = 1, max = 1500, message = "No se cumple la condición")
-    private String descripcion; 
+    private String descripcion;
+    
+    @NotNull
+    private String duracion; 
+    
+    private String imagen;
     
     public Educacion() {
         
     }
 
-    public Educacion(String nombre, String descripcion) {
+    public Educacion(String nombre, String descripcion, String duracion, String imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.duracion = duracion;
+        this.imagen = imagen;
     }
     
 }

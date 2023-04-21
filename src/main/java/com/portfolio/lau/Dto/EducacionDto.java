@@ -13,12 +13,20 @@ public class EducacionDto {
     @NotBlank
     private String descripcion;
     
+    @NotBlank
+    private String duracion;
+    
+    @NotBlank
+    private String imagen;
+    
     public EducacionDto() {
     }
 
-    public EducacionDto(String nombre, String descripcion) {
+    public EducacionDto(String nombre, String descripcion, String duracion, String imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.duracion = duracion;
+        this.imagen = imagen;
     }
     
 }
