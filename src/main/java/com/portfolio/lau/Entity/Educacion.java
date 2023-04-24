@@ -27,15 +27,18 @@ public class Educacion {
     
     private String imagen;
     
+    private String info;
+    
     public Educacion() {
         
     }
 
-    public Educacion(String nombre, String descripcion, String duracion, String imagen) {
+    public Educacion(String nombre, String descripcion, String duracion, String imagen, String info) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.duracion = duracion;
         this.imagen = imagen;
+        this.info= info;
     }
     
 }

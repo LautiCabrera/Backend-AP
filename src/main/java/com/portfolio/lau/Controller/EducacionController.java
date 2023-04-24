@@ -56,7 +56,7 @@ public class EducacionController {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         if(implementEducacionService.existsByNombre(educacionDto.getNombre()))
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        Educacion educacion = new Educacion(educacionDto.getNombre(), educacionDto.getDescripcion(), educacionDto.getDuracion(), educacionDto.getImagen());
+        Educacion educacion = new Educacion(educacionDto.getNombre(), educacionDto.getDescripcion(), educacionDto.getDuracion(), educacionDto.getImagen(), educacionDto.getInfo());
         implementEducacionService.save(educacion);
         return new ResponseEntity(new Mensaje("Educación creada"), HttpStatus.OK);
                 
@@ -76,6 +76,7 @@ public class EducacionController {
         educacion.setDescripcion(educaciondto.getDescripcion());
         educacion.setDuracion(educaciondto.getDuracion());
         educacion.setImagen(educaciondto.getImagen());
+        educacion.setInfo(educaciondto.getInfo());
         
         implementEducacionService.save(educacion);
         
