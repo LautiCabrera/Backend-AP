@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,15 +22,22 @@ public class Proyectos {
     @NotNull
     private String descripcion; 
     
-    private String url;
+    @NotNull
+    private String duracion;
+    
+    private String imagen;
+    
+    private String info;
 
     public Proyectos() {
     }
 
-    public Proyectos(String nombre, String descripcion, String url) {
+    public Proyectos(String nombre, String descripcion, String duracion, String imagen, String info) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.url = url;
+        this.duracion = duracion;
+        this.imagen = imagen;
+        this.info = info;
     }
 
     

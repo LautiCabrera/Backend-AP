@@ -9,19 +9,29 @@ public class ProyectosDto {
     
     @NotBlank
     private String nombre;
+    
     @NotBlank
     private String descripcion;
+    
     @NotBlank
-    private String url;
+    private String duracion;
+    
+    @NotBlank
+    private String info;
+    
+    @NotBlank
+    private String imagen;
 
     public ProyectosDto() {
         
     }
 
-    public ProyectosDto(String nombre, String descripcion, String url) {
+    public ProyectosDto(String nombre, String descripcion, String duracion, String imagen, String info) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.url = url;
+        this.duracion = duracion;
+        this.imagen = imagen;
+        this.info = info;
     }
     
 }

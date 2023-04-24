@@ -56,7 +56,7 @@ public class ProyectosController {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         if(implementProyectosService.existsByNombre(proyectosDto.getNombre()))
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
-        Proyectos proyectos = new Proyectos(proyectosDto.getNombre(), proyectosDto.getDescripcion(),proyectosDto.getUrl());
+        Proyectos proyectos = new Proyectos(proyectosDto.getNombre(), proyectosDto.getDescripcion(), proyectosDto.getDuracion(), proyectosDto.getImagen(), proyectosDto.getInfo());
         implementProyectosService.save(proyectos);
         return new ResponseEntity(new Mensaje("Proyecto creado"), HttpStatus.OK);
                 
@@ -74,7 +74,9 @@ public class ProyectosController {
         Proyectos proyectos = implementProyectosService.getOne(id).get();
         proyectos.setNombre(proyectosdto.getNombre());
         proyectos.setDescripcion(proyectosdto.getDescripcion());
-        proyectos.setUrl(proyectosdto.getUrl());
+        proyectos.setDuracion(proyectosdto.getDuracion());
+        proyectos.setInfo(proyectosdto.getInfo());
+        proyectos.setImagen(proyectosdto.getImagen());
         
         implementProyectosService.save(proyectos);
         
