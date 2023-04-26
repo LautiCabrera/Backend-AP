@@ -12,13 +12,25 @@ public class ExperienciaDto {
     
     @NotBlank
     private String descripcion;
+    
+    @NotBlank
+    private String duracion;
+    
+    @NotBlank
+    private String info;
+    
+    @NotBlank
+    private String imagen;
 
     public ExperienciaDto() {
     }
 
-    public ExperienciaDto(String nombre, String descripcion) {
+    public ExperienciaDto(String nombre, String descripcion, String duracion, String imagen, String info) {
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.duracion = duracion;
+        this.imagen = imagen;
+        this.info = info;
     }
     
 }
