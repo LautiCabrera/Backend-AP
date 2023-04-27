@@ -32,7 +32,6 @@ com\portfolio\lau\Controller\HabilidadesController.class
 com\portfolio\lau\Security\Service\UsuarioService.class
 com\portfolio\lau\Repository\iContactoRepository.class
 com\portfolio\lau\Controller\ExperienciaController.class
-com\portfolio\lau\Repository\iProyectosRepository.class
 com\portfolio\lau\Controller\ContactoController.class
 com\portfolio\lau\Entity\Proyectos.class
 com\portfolio\lau\Repository\PersonaRepository.class
@@ -46,3 +45,4 @@ com\portfolio\lau\Dto\ProyectosDto.class
 com\portfolio\lau\Controller\EducacionController.class
 com\portfolio\lau\Entity\Educacion.class
 com\portfolio\lau\Security\jwt\JwtProvider.class
+com\portfolio\lau\Repository\ProyectosRepository.class

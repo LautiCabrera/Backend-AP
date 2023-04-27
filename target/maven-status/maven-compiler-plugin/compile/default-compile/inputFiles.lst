@@ -2,7 +2,6 @@ C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\LauAp
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Security\jwt\JwtProvider.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Dto\ExperienciaDto.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Entity\Experiencia.java
-C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Repository\iProyectosRepository.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Security\Dto\LoginUsuario.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Controller\ContactoController.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Entity\Educacion.java
@@ -14,6 +13,7 @@ C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Secur
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Controller\HabilidadesController.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Security\Dto\NuevoUsuario.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Repository\HabilidadesRepository.java
+C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Repository\ProyectosRepository.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Service\ImplementExperienciaService.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Controller\ProyectosController.java
 C:\Users\Gamer\Documents\GitHub\Backend-AP\src\main\java\com\portfolio\lau\Dto\PersonaDto.java
