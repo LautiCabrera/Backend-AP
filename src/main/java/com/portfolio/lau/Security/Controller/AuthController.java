@@ -1,14 +1,13 @@
-
 package com.portfolio.lau.Security.Controller;
 
 import com.portfolio.lau.Security.Dto.JwtDto;
-import com.portfolio.lau.Security.Dto.LoginUsuario;
-import com.portfolio.lau.Security.Dto.NuevoUsuario;
-import com.portfolio.lau.Security.Entity.Rol;
-import com.portfolio.lau.Security.Entity.Usuario;
-import com.portfolio.lau.Security.Enums.RolNombre;
-import com.portfolio.lau.Security.Service.RolService;
-import com.portfolio.lau.Security.Service.UsuarioService;
+import com.portfolio.lau.Security.Dto.MessageDto;
+import com.portfolio.lau.Security.Dto.UserLogin;
+import com.portfolio.lau.Security.Dto.NewUser;
+import com.portfolio.lau.Security.Entity.Role;
+import com.portfolio.lau.Security.Entity.User;
+import com.portfolio.lau.Security.Service.RoleService;
+import com.portfolio.lau.Security.Service.UserService;
 import com.portfolio.lau.Security.jwt.JwtProvider;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,69 +22,72 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"https://frontend-ap-19794.web.app","http://localhost:4200"})
 public class AuthController {
-    
+
     @Autowired
     PasswordEncoder passwordEncoder;
     @Autowired
     AuthenticationManager authenticationManager;
     @Autowired
-    UsuarioService usuarioService;
+    UserService userService;
     @Autowired
-    RolService rolService;
+    RoleService roleService;
     @Autowired
     JwtProvider jwtProvider;
-    
-    @PostMapping("/nuevo")
-    public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            return new ResponseEntity(new Mensaje("Campos inválidos"), HttpStatus.BAD_REQUEST);
+
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@Valid @RequestBody NewUser newUser, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(new MessageDto("Campos inválidos"), HttpStatus.BAD_REQUEST);
         }
-        if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario())){
-            return new ResponseEntity(new Mensaje("Nombre de usuario ingresado en uso"), HttpStatus.BAD_REQUEST);
+        if (userService.existsByUserName(newUser.getUserName())) {
+            return new ResponseEntity<>(new MessageDto("Nombre de usuario ingresado en uso"), HttpStatus.BAD_REQUEST);
         }
-        if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
-            return new ResponseEntity(new Mensaje("Email ingresado en uso"), HttpStatus.BAD_REQUEST);
+        if (userService.existsByEmail(newUser.getEmail())) {
+            return new ResponseEntity<>(new MessageDto("Email ingresado en uso"), HttpStatus.BAD_REQUEST);
         }
-        
-        Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(), nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
-        
-        Set<Rol> roles = new HashSet<>();
-        roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
-        
-        if(nuevoUsuario.getRoles().contains("admins")){
-            roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
+
+        User user = User.builder()
+                .name(newUser.getName())
+                .userName(newUser.getUserName())
+                .email(newUser.getEmail())
+                .password(passwordEncoder.encode(newUser.getPassword()))
+                .build();
+
+        Set<Role> roles = new HashSet<>();
+        roles.add(roleService.getByRole(com.portfolio.lau.Security.Enums.Role.ROLE_USER).get());
+
+        if (newUser.getRoles().contains("admins")) {
+            roles.add(roleService.getByRole(com.portfolio.lau.Security.Enums.Role.ROLE_ADMIN).get());
         }
-        usuario.setRoles(roles);
-        usuarioService.save(usuario);
-        
-        return new ResponseEntity(new Mensaje("Usuario guardado"), HttpStatus.CREATED);
+
+        user.setRoles(roles);
+        userService.save(user);
+
+        return new ResponseEntity<>(new MessageDto("Usuario guardado"), HttpStatus.CREATED);
     }
-    
+
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            return new ResponseEntity(new Mensaje("Campos incorrectos"), HttpStatus.BAD_REQUEST);
+    public ResponseEntity<?> login(@Valid @RequestBody UserLogin userLogin, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(new MessageDto("Campos incorrectos"), HttpStatus.BAD_REQUEST);
         }
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
-        
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(userLogin.getUserName(), userLogin.getPassword()));
+
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        
+
         String jwt = jwtProvider.generateToken(authentication);
-        
+
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        
+
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
-        
-        return new ResponseEntity(jwtDto, HttpStatus.OK);
+
+        return new ResponseEntity<>(jwtDto, HttpStatus.OK);
     }
+
 }

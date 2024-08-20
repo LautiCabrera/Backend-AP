@@ -40,98 +40,99 @@ Las dependencias incluidas en el proyecto son las siguientes:
 
 - **spring.datasource.hibernate.dialect**: Define el dialecto de Hibernate a utilizar, que determina cómo Hibernate interactúa con la base de datos subyacente.
 - **spring.datasource.url**: Es la URL de conexión a la base de datos, especifica la ubicación de la base de datos a la que la aplicación debe conectarse.
-- **spring.datasource.username**: Es el nombre de usuario utilizado para autenticarse en la base de datos.
-- **spring.datasource.password**: Es la contraseña asociada al nombre de usuario utilizado para autenticarse en la base de datos.
+- **spring.datasource.username**: Es el nombre de user utilizado para autenticarse en la base de datos.
+- **spring.datasource.password**: Es la contraseña asociada al nombre de user utilizado para autenticarse en la base de datos.
 - **spring.jpa.hibernate.ddl-auto**: Controla la estrategia de generación del esquema de la base de datos por parte de Hibernate, como crear, actualizar o validar el esquema.
 - **spring.jpa.show-sql**: Determina si se deben mostrar las consultas SQL generadas por Hibernate en la consola de registro.
 - **jwt.secret**: Clave secreta que se utiliza para firmar los tokens JWT.
-- **jwt.expiration**: Determina el tiempo de vida (expiración) de los tokens JWT emitidos por la aplicación. 
+- **jwt.expiration**: Determina el tiempo de vida (expiración) de los tokens JWT emitidos por la aplicación.
 - **server.port**: Configura el puerto en el que el servidor web integrado en Spring Boot escuchará las solicitudes entrantes.
 
 ## 🌐 Endpoints de la API 🌐
 
-  URL general para crear los endpoints ➡️ https://backend-ap-aa0t.onrender.com
+URL general para crear los endpoints ➡️ https://backend-ap-aa0t.onrender.com
 
-### ↪️ Educación
+### ↪️ Education
 
-| Métodos | Rutas                         | Acciones                                            |
-|---------|-------------------------------|-----------------------------------------------------|
-| GET     | /educacion/lista              | Retorna una lista de todas las educaciones.         |
-| GET     | /educacion/detalle/{id}       | Retorna una educación en base al id por parametro.  |
-| DELETE  | /educacion/borrar/{id}        | Elimina una educación en base al id por parametro.  |
-| POST    | /educacion/crear              | Crea una educación.                                 |
-| PUT     | /educacion/actualizar/{id}    | Actualiza una educación en base al id por parametro.|
+| Métodos | Rutas                  | Acciones                                             |
+| ------- | ---------------------- | ---------------------------------------------------- |
+| GET     | /education/lista       | Retorna una lista de todas las educaciones.          |
+| GET     | /education/detail/{id} | Retorna una educación en base al id por parametro.   |
+| DELETE  | /education/delete/{id} | Elimina una educación en base al id por parametro.   |
+| POST    | /education/create      | Crea una educación.                                  |
+| PUT     | /education/update/{id} | Actualiza una educación en base al id por parametro. |
 
-### ↪️ Experiencia
+### ↪️ Experience
 
-| Métodos | Rutas                         | Acciones                                              |
-|---------|-------------------------------|-------------------------------------------------------|
-| GET     | /experiencia/lista            | Retorna una lista de todas las experiencias.          |
-| GET     | /experiencia/detalle/{id}     | Retorna una experiencia en base al id por parametro.  |
-| DELETE  | /experiencia/borrar/{id}      | Elimina una experiencia en base al id por parametro.  |
-| POST    | /experiencia/crear            | Crea una experiencia.                                 |
-| PUT     | /experiencia/actualizar/{id}  | Actualiza una experiencia en base al id por parametro.|
+| Métodos | Rutas                   | Acciones                                              |
+| ------- | ----------------------- | ----------------------------------------------------- |
+| GET     | /experience/lista       | Retorna una lista de todas las experiencias.          |
+| GET     | /experience/detail/{id} | Retorna una experience en base al id por parametro.   |
+| DELETE  | /experience/delete/{id} | Elimina una experience en base al id por parametro.   |
+| POST    | /experience/create      | Crea una experience.                                  |
+| PUT     | /experience/update/{id} | Actualiza una experience en base al id por parametro. |
 
-### ↪️ Habilidades
+### ↪️ Skill
 
-| Métodos | Rutas                         | Acciones                                            |
-|---------|-------------------------------|-----------------------------------------------------|
-| GET     | /hadilidades/lista            | Retorna una lista de todas las hadilidades.         |
-| GET     | /hadilidades/detalle/{id}     | Retorna una hadilidad en base al id por parametro.  |
-| DELETE  | /hadilidades/borrar/{id}      | Elimina una hadilidad en base al id por parametro.  |
-| POST    | /hadilidades/crear            | Crea una hadilidad.                                 |
-| PUT     | /hadilidades/actualizar/{id}  | Actualiza una hadilidad en base al id por parametro.|
+| Métodos | Rutas              | Acciones                                             |
+| ------- | ------------------ | ---------------------------------------------------- |
+| GET     | /skill/lista       | Retorna una lista de todas las hadilidades.          |
+| GET     | /skill/detail/{id} | Retorna una hadilidad en base al id por parametro.   |
+| DELETE  | /skill/delete/{id} | Elimina una hadilidad en base al id por parametro.   |
+| POST    | /skill/create      | Crea una hadilidad.                                  |
+| PUT     | /skill/update/{id} | Actualiza una hadilidad en base al id por parametro. |
 
-### ↪️ Proyectos
+### ↪️ Proyect
 
-| Métodos | Rutas                         | Acciones                                          |
-|---------|-------------------------------|---------------------------------------------------|
-| GET     | /proyectos/lista              | Retorna una lista de todos los proyectos.         |
-| GET     | /proyectos/detalle/{id}       | Retorna un proyecto en base al id por parametro.  |
-| DELETE  | /proyectos/borrar/{id}        | Elimina un proyecto en base al id por parametro.  |
-| POST    | /proyectos/crear              | Crea un proyecto.                                 |
-| PUT     | /proyectos/actualizar/{id}    | Actualiza un proyecto en base al id por parametro.|
+| Métodos | Rutas                | Acciones                                           |
+| ------- | -------------------- | -------------------------------------------------- |
+| GET     | /proyect/lista       | Retorna una lista de todos los proyect.            |
+| GET     | /proyect/detail/{id} | Retorna un proyecto en base al id por parametro.   |
+| DELETE  | /proyect/delete/{id} | Elimina un proyecto en base al id por parametro.   |
+| POST    | /proyect/create      | Crea un proyecto.                                  |
+| PUT     | /proyect/update/{id} | Actualiza un proyecto en base al id por parametro. |
 
-### ↪️ Personas
+### ↪️ Person
 
-| Métodos | Rutas                        | Acciones                                          |
-|---------|------------------------------|---------------------------------------------------|
-| GET     | /personas/lista              | Retorna una lista de todas las personas.          |
-| GET     | /personas/detalle/{id}       | Retorna una persona en base al id por parametro.  |
-| PUT     | /personas/actualizar/{id}    | Actualiza una persona en base al id por parametro.|
+| Métodos | Rutas               | Acciones                                          |
+| ------- | ------------------- | ------------------------------------------------- |
+| GET     | /person/lista       | Retorna una lista de todas las personas.          |
+| GET     | /person/detail/{id} | Retorna una person en base al id por parametro.   |
+| PUT     | /person/update/{id} | Actualiza una person en base al id por parametro. |
 
 ### ↪️ Auth
 
-| Métodos  | Rutas                    | Acciones                                          |
-|----------|--------------------------|---------------------------------------------------|
-| POST     | /auth/nuevo              | Crea una nuevo usuario.                           |
-| POST     | /auth/login              | Retorna un token y la información del usuario.    |
+| Métodos | Rutas       | Acciones                                    |
+| ------- | ----------- | ------------------------------------------- |
+| POST    | /auth/new   | Crea una nuevo user.                        |
+| POST    | /auth/login | Retorna un token y la información del user. |
 
 #### 📬 Ejemplo y formato para las solicitudes GET y DELETE:
 
 ```text
 https://backend-ap-aa0t.onrender.com/tabla/lista
-https://backend-ap-aa0t.onrender.com/tabla/detalle/89
+https://backend-ap-aa0t.onrender.com/tabla/detail/89
 https://backend-ap-aa0t.onrender.com/tabla/delete/89
-````
+```
 
 #### 📬 Ejemplo y formato para las solicitudes POST y PUT:
 
 La solicitud debe ser un objeto JSON que puede contener según la tabla;
 
-- **Educación**: nombre, descripcion, duracion, imagen, info.
-- **Experiencia**: nombre, descripcion, duracion, imagen, info.
-- **Habilidades**: nombre, progreso.
-- **Proyectos**: nombre, descripcion, duracion, imagen, info.
-- **Personas**: nombre, apellido, descripcion, imagen, titulo.
-- **Auth**: nombre, nombreUsuario, email, password, roles.
+- **Education**: name, description, duracion, image, info.
+- **Experience**: name, description, duracion, image, info.
+- **Skill**: name, progreso.
+- **Proyect**: name, description, duracion, image, info.
+- **Person**: name, apellido, description, image, titulo.
+- **Auth**: name, userName, email, password, roles.
 
 ```json
 {
-    "nombre":"Tecnico Superior en redes y telecomunicaciones",
-    "descripcion":"Conocimientos especializados en el diseño, implementación, etc."
+  "name": "Tecnico Superior en redes y telecomunicaciones",
+  "description": "Conocimientos especializados en el diseño, implementación, etc."
 }
-````
+```
+
 #### 📭 Códigos de estado HTTP:
 
 - 200 OK: La solicitud se procesó correctamente.
@@ -141,7 +142,7 @@ La solicitud debe ser un objeto JSON que puede contener según la tabla;
 
 - <a href="https://github.com/LautiCabrera/Frontend-AP" target="_blank">Portfolio-FrontEnd</a>
 
-## 📱 Demo V1.0 📲 
+## 📱 Demo V1.0 📲
 
 - <a href="https://frontend-ap-19794.web.app/" target="_blank">Portfolio-Demo</a>
 
