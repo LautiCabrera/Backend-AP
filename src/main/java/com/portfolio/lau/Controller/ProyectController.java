@@ -79,7 +79,7 @@ public class ProyectController {
         proyect.setDuration(proyectdto.getDuration());
         proyect.setImage(proyectdto.getImage());
         proyect.setRepo(proyectdto.getRepo());
-        proyect.setDemo(proyect.getDemo());
+        proyect.setDemo(proyectdto.getDemo());
 
         implementProyectService.save(proyect);
 
